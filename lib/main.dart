@@ -20,13 +20,28 @@ class HomePage extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(20.0),
             alignment: Alignment.center,
-            width: 100,
-            height: 100,
+            width: 150,
+            height: 150,
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey[400],
+                    blurRadius: 5,
+                    offset: Offset(2.0, 5.0))
+              ],
               color: Colors.teal,
-              gradient: LinearGradient(colors: [Colors.red, Colors.pink]),
+              gradient: LinearGradient(colors: [Colors.yellow, Colors.pink]),
             ),
-            child: Text("hi buddy"),
+            child: Text(
+              "hi buddy",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
+              ),
+            ),
           ),
         ));
   }
