@@ -20,9 +20,12 @@ class HomePage extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(20.0),
             alignment: Alignment.center,
-            color: Colors.purpleAccent,
             width: 100,
             height: 100,
+            decoration: BoxDecoration(
+              color: Colors.teal,
+              gradient: LinearGradient(colors: [Colors.red, Colors.pink]),
+            ),
             child: Text("hi buddy"),
           ),
         ));
