@@ -4,6 +4,10 @@ import 'package:flutter/cupertino.dart';
 void main() {
   runApp(MaterialApp(
     title: "Awesome App",
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      primarySwatch: Colors.purple,
+    ),
     home: HomePage(),
   ));
 }
@@ -12,47 +16,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Awesome App"),
-          backgroundColor: Colors.green[600],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: Container(
-              width: 200,
-              height: 400,
-              color: Colors.black,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(8.0),
-                      width: 100,
-                      height: 100,
-                      color: Colors.green,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8.0),
-                      width: 100,
-                      height: 100,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8.0),
-                      width: 100,
-                      height: 100,
-                      color: Colors.orange,
-                    ),
-                  ],
-                ),
+      appBar: AppBar(
+        title: Text("Awesome App"),
+      ),
+      body: Container(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              child: Text(
+                "Hi, I Am a Drawer",
+                style: TextStyle(color: Colors.white),
               ),
+              decoration: BoxDecoration(color: Colors.indigo),
             ),
-          ),
-        ));
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("Personal"),
+            )
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+      ),
+    );
   }
 }
