@@ -24,17 +24,25 @@ class HomePage extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
-              child: Text(
-                "Hi, I Am a Drawer",
-                style: TextStyle(color: Colors.white),
+            UserAccountsDrawerHeader(
+              accountName: Text("Faheem Ahmad"),
+              accountEmail: Text("fisforfaheem@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1524666041070-9d87656c25bb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
               ),
-              decoration: BoxDecoration(color: Colors.indigo),
             ),
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Account"),
               subtitle: Text("Personal"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.mail),
+              title: Text("Email"),
+              subtitle: Text("fisforfaheem@gmail.com"),
+              trailing: Icon(Icons.send),
             )
           ],
         ),
