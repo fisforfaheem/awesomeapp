@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController _nameController = TextEditingController();
+  var myText = "Change Me";
   @override
   void initState() {
     super.initState();
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 Text(
-                  "Change Me ",
+                  myText,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 ),
                 SizedBox(
@@ -95,7 +96,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          myText = _nameController.text;
+          setState(() {});
+        },
         child: Icon(Icons.refresh),
       ),
     );
